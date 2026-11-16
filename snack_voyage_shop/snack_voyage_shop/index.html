@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff4bf">
+<title>Snack Voyage | 세계의 맛을 지금 바로 만나보세요</title>
+<style>
+:root{--yellow:#ffd84d;--yellow2:#fff2b8;--pale:#fff9e8;--ink:#382318;--muted:#8b7769;--line:#eee6d8;--white:#fff;--orange:#f28a19;--shadow:0 8px 26px rgba(87,57,25,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}button,input,select{font:inherit}button{cursor:pointer;border:0}.wrap{max-width:1200px;margin:auto;padding:0 24px}.topline{background:var(--yellow2);font-size:12px;padding:9px 0;text-align:center;color:#68451c}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px;background:#fff;position:sticky;top:0;z-index:20;border-bottom:1px solid #f5eedf}.brand{font-size:24px;font-weight:900;letter-spacing:-1px;white-space:nowrap}.brand span{color:#efa51c}.brand small{display:block;font-size:10px;color:#967b57;letter-spacing:.4px;font-weight:500}.navlinks{display:flex;gap:26px;align-items:center}.navlinks a{color:var(--ink);text-decoration:none;font-size:14px;font-weight:700}.navright{display:flex;align-items:center;gap:10px}.search{border:1px solid var(--line);border-radius:24px;padding:10px 14px;width:190px;background:#fffdf8}.search input{border:0;outline:0;width:100%;background:transparent;font-size:12px}.iconbtn{background:#fff;border:1px solid var(--line);border-radius:50%;width:38px;height:38px;font-size:17px;position:relative}.count{position:absolute;right:-3px;top:-4px;background:#f05a3b;color:white;border-radius:20px;font-size:10px;padding:2px 5px}.hero{position:relative;margin:18px auto 0;max-width:1200px;padding:0 24px}.hero-frame{height:330px;overflow:hidden;border-radius:24px;position:relative;background:#fff0b4}.hero-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .35s}.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,248,220,.92),rgba(255,248,220,.45) 38%,transparent 68%)}.hero-copy{position:absolute;left:7%;top:50%;transform:translateY(-50%);max-width:390px}.eyebrow{font-size:12px;font-weight:800;color:#a16d16;letter-spacing:2px}.hero h1{font-size:clamp(28px,4vw,46px);line-height:1.2;margin:12px 0;color:#402719;letter-spacing:-2px}.hero p{line-height:1.7;color:#634b38;margin:0 0 18px}.pill{border-radius:30px;background:var(--yellow);padding:13px 24px;font-weight:800;color:#422d15;box-shadow:0 5px 12px #e5b93d33}.arrow{position:absolute;top:50%;transform:translateY(-50%);border-radius:50%;width:42px;height:42px;background:#fff;box-shadow:var(--shadow);font-size:22px;z-index:2}.arrow.prev{left:38px}.arrow.next{right:38px}.dots{display:flex;justify-content:center;gap:8px;margin:13px 0 22px}.dots button{width:8px;height:8px;border-radius:50%;background:#e7dfd2;padding:0}.dots button.active{background:#f2b91f;width:22px;border-radius:8px}.benefits{display:grid;grid-template-columns:repeat(4,1fr);background:#fff8e7;border-radius:18px;padding:20px 10px;margin-bottom:42px}.benefit{display:flex;align-items:center;justify-content:center;gap:12px;border-right:1px solid #e7d9b9}.benefit:last-child{border:0}.benefit b{font-size:14px}.benefit small{display:block;color:#90775e;margin-top:4px}.benefit .emoji{font-size:27px}.section{margin:0 0 42px}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:16px}.section-head h2{font-size:25px;margin:0;letter-spacing:-1px}.section-head p{margin:5px 0 0;color:var(--muted);font-size:13px}.more{color:#765b3d;text-decoration:none;font-size:13px;border:1px solid var(--line);padding:8px 14px;border-radius:22px}.products{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.product{border:1px solid var(--line);border-radius:17px;overflow:hidden;background:#fff;box-shadow:0 4px 15px #39230b08;transition:.2s}.product:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.product-img{height:180px;background:#fffaf0;display:flex;align-items:center;justify-content:center;padding:10px}.product-img img{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}.product-info{padding:13px}.product-info h3{font-size:14px;margin:0 0 5px}.product-info small{color:#998777}.price-row{display:flex;justify-content:space-between;align-items:center;margin-top:10px}.price{font-weight:900}.add{background:var(--yellow);width:34px;height:34px;border-radius:50%;font-size:16px}.rating{font-size:11px;color:#d89c18;margin-top:7px}.promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel{border-radius:22px;padding:24px;background:linear-gradient(120deg,#fff8e7,#fff1c5);min-height:220px;position:relative;overflow:hidden}.panel h2{margin:0 0 7px;font-size:22px}.panel p{margin:0;color:#80684d;font-size:13px}.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}.tier{background:#ffffffb8;border:1px solid #f0e2c4;border-radius:14px;text-align:center;padding:13px 5px;font-size:12px}.tier strong{display:block;font-size:15px;margin:6px 0}.tier em{font-style:normal;color:#b87913;font-weight:800}.point-panel{background:linear-gradient(110deg,#ffe57a,#ffcf38);display:flex;align-items:center}.point-panel img{position:absolute;right:0;bottom:0;width:48%;height:100%;object-fit:cover;mix-blend-mode:multiply;opacity:.8}.point-copy{position:relative;z-index:1;max-width:62%}.point-copy h2{font-size:26px}.point-copy strong{font-size:29px;color:#d56b0b}.point-copy button{margin-top:16px;background:#4c2d1c;color:white;border-radius:24px;padding:11px 20px;font-weight:700}.lower-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.reviewbox,.guidebox{border:1px solid var(--line);border-radius:20px;padding:22px;background:#fffdfa}.review-list{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:15px}.review{background:#fff8e8;border-radius:13px;padding:12px;font-size:12px;line-height:1.6}.stars{color:#efb41c;letter-spacing:1px}.guide-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:20px;text-align:center}.guide-step .bubble{margin:auto auto 9px;width:48px;height:48px;border-radius:50%;background:#fff0bf;display:grid;place-items:center;font-size:22px}.guide-step small{font-size:11px;color:#78624e;line-height:1.5}.footer{background:#fff7e5;margin-top:48px;padding:30px 0 18px}.footer-inner{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.footer p,.footer a{font-size:12px;color:#806d58;line-height:1.8}.footer a{margin-right:12px}.copyright{text-align:center;border-top:1px solid #eddfc4;margin-top:22px;padding-top:15px;font-size:11px;color:#927c61}.modal-backdrop{position:fixed;inset:0;background:#24170dcc;display:none;align-items:center;justify-content:center;z-index:60;padding:16px}.modal-backdrop.show{display:flex}.modal{width:min(480px,100%);background:white;border-radius:22px;padding:26px;max-height:90vh;overflow:auto;box-shadow:0 20px 70px #0003}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.modal-head h2{margin:0;font-size:22px}.close{background:#f7f1e7;border-radius:50%;width:32px;height:32px}.field{margin:12px 0}.field label{display:block;font-size:12px;font-weight:700;margin-bottom:6px}.field input,.field select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;outline-color:#f3c83e}.wide{width:100%;padding:13px;border-radius:12px;background:var(--yellow);font-weight:800;margin-top:12px}.muted{font-size:12px;color:#8c7b6c;line-height:1.6}.cart-line{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.cart-line img{width:58px;height:58px;object-fit:contain;background:#fff8e9;border-radius:10px}.cart-line .grow{flex:1}.qty{display:flex;align-items:center;gap:9px}.qty button{background:#f7f1e7;border-radius:7px;width:25px;height:25px}.total{display:flex;justify-content:space-between;font-weight:900;font-size:18px;padding:18px 0}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(90px);background:#3d2a1d;color:white;padding:12px 20px;border-radius:25px;z-index:90;transition:.3s;font-size:13px}.toast.show{transform:translateX(-50%) translateY(0)}.account-chip{font-size:11px;color:#88611b;background:#fff4cf;border-radius:20px;padding:7px 10px;display:none}
+@media(max-width:850px){.navlinks{display:none}.search{width:145px}.hero-frame{height:300px}.products{grid-template-columns:repeat(3,1fr)}.product-img{height:150px}.benefits{grid-template-columns:repeat(2,1fr);gap:15px}.benefit:nth-child(2){border:0}.promo-grid,.lower-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.wrap{padding:0 15px}.nav{height:66px;padding:0 15px}.brand{font-size:20px}.search{display:none}.hero{padding:0 12px;margin-top:12px}.hero-frame{height:320px}.hero-shade{background:linear-gradient(90deg,rgba(255,248,220,.94),rgba(255,248,220,.62) 60%,transparent)}.hero-copy{left:7%;right:7%;max-width:270px}.hero h1{font-size:31px}.hero p{font-size:13px}.arrow.prev{left:20px}.arrow.next{right:20px}.benefits{padding:16px 5px}.benefit{justify-content:flex-start;padding-left:12px}.benefit b{font-size:12px}.benefit .emoji{font-size:22px}.products{grid-template-columns:repeat(2,1fr);gap:10px}.product-img{height:145px}.product-info{padding:10px}.section-head h2{font-size:21px}.panel{padding:18px}.point-copy{max-width:70%}.point-copy h2{font-size:21px}.point-copy strong{font-size:23px}.tiers{gap:5px}.tier{font-size:10px;padding:10px 3px}.review-list{grid-template-columns:1fr}.guide-steps{grid-template-columns:repeat(2,1fr);row-gap:18px}.footer-inner{display:block}.footer-inner>div{margin-bottom:15px}}
+</style>
+</head>
+<body>
+<div class="topline">✈ 전 세계의 맛있는 간식을, 지금 바로 만나보세요!　 ·　 신규 회원 가입 시 1,000P</div>
+<header class="nav wrap">
+  <a class="brand" href="#" style="text-decoration:none;color:inherit">✈ Snack<span>Voyage</span><small>Global Snacks, Closer to You</small></a>
+  <nav class="navlinks"><a href="#home">홈</a><a href="#best">베스트</a><a href="#best">신상품</a><a href="#membership">멤버십</a><a href="#event">이벤트</a></nav>
+  <div class="navright">
+    <div class="search"><input id="searchInput" placeholder="간식을 검색해보세요" aria-label="상품 검색"></div>
+    <span class="account-chip" id="accountChip"></span>
+    <button class="iconbtn" onclick="openModal('loginModal')" aria-label="로그인">♙</button>
+    <button class="iconbtn" onclick="openCart()" aria-label="장바구니">🛒<span class="count" id="cartCount">0</span></button>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-frame">
+    <img id="heroImage" src="img/hero-1.jpg" alt="세계 각국의 인기 수입 간식">
+    <div class="hero-shade"></div>
+    <div class="hero-copy">
+      <div class="eyebrow" id="heroEyebrow">TASTE THE WORLD</div>
+      <h1 id="heroTitle">전 세계의 맛을,<br>지금 바로 더 가까이!</h1>
+      <p id="heroDesc">해외에서 사랑받는 인기 간식들을<br>스낵보야지에서 만나보세요.</p>
+      <button class="pill" onclick="document.querySelector('#best').scrollIntoView()">지금 쇼핑하기　›</button>
+    </div>
+  </div>
+  <button class="arrow prev" onclick="moveSlide(-1)" aria-label="이전 슬라이드">‹</button>
+  <button class="arrow next" onclick="moveSlide(1)" aria-label="다음 슬라이드">›</button>
+</section>
+<div class="dots" id="heroDots"><button class="active" onclick="setSlide(0)"></button><button onclick="setSlide(1)"></button><button onclick="setSlide(2)"></button><button onclick="setSlide(3)"></button></div>
+
+<div class="wrap">
+<section class="benefits">
+  <div class="benefit"><span class="emoji">💎</span><div><b>회원 가입 시</b><small>1,000P 지급!</small></div></div>
+  <div class="benefit"><span class="emoji">🛒</span><div><b>구매 시</b><small>최대 5% 적립!</small></div></div>
+  <div class="benefit"><span class="emoji">👑</span><div><b>등급별 더 큰 혜택!</b><small>구매할수록 혜택 UP</small></div></div>
+  <div class="benefit"><span class="emoji">🎁</span><div><b>생일 축하 포인트</b><small>2,000P 지급!</small></div></div>
+</section>
+
+<section class="section" id="best">
+  <div class="section-head"><div><h2>👑 BEST SELLERS</h2><p>지금 가장 사랑받는 글로벌 스낵을 만나보세요!</p></div><a class="more" href="#best">더보기　›</a></div>
+  <div class="products" id="productGrid"></div>
+</section>
+
+<section class="promo-grid section" id="membership">
+  <div class="panel">
+    <h2>🎁 MEMBERSHIP BENEFITS</h2><p>스낵보야지와 함께하는 특별한 혜택!</p>
+    <div class="tiers">
+      <div class="tier">🥉<strong>일반 회원</strong>구매 시<br><em>1% 적립</em></div>
+      <div class="tier">🥈<strong>실버 회원</strong>누적 10만원 이상<br><em>3% 적립</em></div>
+      <div class="tier">👑<strong>골드 회원</strong>누적 30만원 이상<br><em>5% 적립</em></div>
+    </div>
+    <p style="margin-top:13px;font-size:11px">※ 누적 구매금액 기준의 예시 등급 정책입니다.</p>
+  </div>
+  <div class="panel point-panel" id="event">
+    <img src="img/points-promo.jpg" alt="" aria-hidden="true">
+    <div class="point-copy"><h2>POINT EVENT</h2><p>지금 가입하고 포인트 혜택을 받아보세요!</p><strong>1,000P 지급!</strong><br><button onclick="openModal('registerModal')">회원가입 하기　›</button></div>
+  </div>
+</section>
+
+<section class="lower-grid section">
+  <div class="reviewbox"><h2 style="font-size:19px;margin:0">⭐ 실제 구매자들의 생생한 후기</h2><div class="review-list">
+    <div class="review"><b>snack_lover</b><div class="stars">★★★★★</div>해외 간식을 집에서 편하게 받았어요! 포장도 꼼꼼해요.</div>
+    <div class="review"><b>sweet_tooth</b><div class="stars">★★★★★</div>다양한 과자가 있어서 선물하기도 좋아요.</div>
+    <div class="review"><b>global_eater</b><div class="stars">★★★★★</div>배송도 빠르고 상품도 신선해서 만족합니다.</div>
+  </div></div>
+  <div class="guidebox"><h2 style="font-size:19px;margin:0">📍 SHOPPING GUIDE</h2><p class="muted">처음이신가요? 아래 가이드를 확인해보세요!</p><div class="guide-steps">
+    <div class="guide-step"><div class="bubble">🛒</div><small>간편한 회원가입<br>(1분이면 OK!)</small></div>
+    <div class="guide-step"><div class="bubble">🛍️</div><small>원하는 상품을<br>장바구니에!</small></div>
+    <div class="guide-step"><div class="bubble">💳</div><small>다양한 방법으로<br>안전하게 결제!</small></div>
+    <div class="guide-step"><div class="bubble">🎁</div><small>포인트와 함께<br>더 즐겁게!</small></div>
+  </div></div>
+</section>
+</div>
+</main>
+
+<footer class="footer"><div class="wrap footer-inner">
+  <div><div class="brand">✈ Snack<span>Voyage</span><small>Global Snacks, Closer to You</small></div><p>Enjoy the World, One Snack at a Time!</p></div>
+  <div><p><a href="#">이용약관</a><a href="#">개인정보처리방침</a><a href="#">자주 묻는 질문</a><a href="#">고객센터</a></p><p>☎ 1544-1234 (평일 09:00 ~ 18:00)<br>✉ snackvoyage@example.com</p></div>
+  <div><b>고객센터</b><p>궁금한 점이 있으신가요?<br>언제든 편하게 문의해주세요.</p></div>
+</div><div class="copyright">© 2026 Snack Voyage. All rights reserved.　 |　 본 페이지는 쇼핑몰 데모입니다.</div></footer>
+
+<div class="modal-backdrop" id="loginModal"><div class="modal"><div class="modal-head"><h2>로그인</h2><button class="close" onclick="closeModal('loginModal')">✕</button></div>
+  <div class="field"><label>이메일</label><input id="loginEmail" type="email" placeholder="email@example.com"></div>
+  <div class="field"><label>비밀번호</label><input id="loginPassword" type="password" placeholder="비밀번호"></div>
+  <button class="wide" onclick="login()">로그인</button><p class="muted">아직 회원이 아니신가요? <a href="#" onclick="switchModal('loginModal','registerModal')">회원가입</a></p>
+</div></div>
+
+<div class="modal-backdrop" id="registerModal"><div class="modal"><div class="modal-head"><h2>스낵보야지 회원가입</h2><button class="close" onclick="closeModal('registerModal')">✕</button></div>
+  <div class="field"><label>이름</label><input id="regName" placeholder="이름을 입력하세요"></div>
+  <div class="field"><label>이메일</label><input id="regEmail" type="email" placeholder="email@example.com"></div>
+  <div class="field"><label>비밀번호</label><input id="regPassword" type="password" minlength="4" placeholder="4자 이상 입력"></div>
+  <p class="muted">가입 즉시 1,000P가 지급됩니다. 데모 버전에서는 회원 정보가 현재 브라우저에 저장됩니다.</p>
+  <button class="wide" onclick="register()">1,000P 받고 가입하기</button>
+</div></div>
+
+<div class="modal-backdrop" id="cartModal"><div class="modal"><div class="modal-head"><h2>🛒 장바구니</h2><button class="close" onclick="closeModal('cartModal')">✕</button></div>
+  <div id="cartItems"></div><div class="total"><span>총 상품금액</span><span id="cartTotal">0원</span></div><p class="muted" id="pointPreview"></p><button class="wide" onclick="checkout()">주문하기 / 결제하기</button><p class="muted">실제 결제는 연결되어 있지 않으며, 주문 완료 흐름을 체험하는 데모입니다.</p>
+</div></div>
+
+<div class="modal-backdrop" id="checkoutModal"><div class="modal"><div class="modal-head"><h2>주문서 작성</h2><button class="close" onclick="closeModal('checkoutModal')">✕</button></div>
+  <div class="field"><label>받는 분</label><input id="shipName" placeholder="수령인 이름"></div>
+  <div class="field"><label>연락처</label><input id="shipPhone" placeholder="010-0000-0000"></div>
+  <div class="field"><label>배송 주소</label><input id="shipAddress" placeholder="주소를 입력하세요"></div>
+  <div class="field"><label>포인트 사용</label><input id="usePoints" type="number" min="0" value="0"></div>
+  <div class="field"><label>결제 수단 (데모)</label><select id="payMethod"><option>신용/체크카드</option><option>계좌이체</option><option>간편결제</option></select></div>
+  <div class="total"><span>결제 예정 금액</span><span id="checkoutTotal">0원</span></div><button class="wide" onclick="completeOrder()">데모 결제하기</button>
+</div></div>
+
+<div class="toast" id="toast"></div>
+<script>
+const products=[
+ {id:1,name:"킷캣 오리지널 4핑거",desc:"일본 인기 초콜릿 · 4 Finger",price:3500,img:"img/product-1.jpg",rating:"4.9 (1,248)"},
+ {id:2,name:"하리보 골드베어",desc:"독일 젤리 · 100g",price:2900,img:"img/product-2.jpg",rating:"4.9 (982)"},
+ {id:3,name:"오레오 오리지널",desc:"미국 쿠키 · 154g",price:3200,img:"img/product-3.jpg",rating:"4.8 (734)"},
+ {id:4,name:"엠앤엠즈 피넛",desc:"미국 초콜릿 · 49g",price:2900,img:"img/product-4.jpg",rating:"4.9 (621)"},
+ {id:5,name:"프링글스 오리지널",desc:"미국 감자칩 · 110g",price:3000,img:"img/product-5.jpg",rating:"4.8 (876)"}
+];
+const slides=[
+ {img:"img/hero-1.jpg",eyebrow:"TASTE THE WORLD",title:"전 세계의 맛을,<br>지금 바로 더 가까이!",desc:"해외에서 사랑받는 인기 간식들을<br>스낵보야지에서 만나보세요."},
+ {img:"img/hero-2.jpg",eyebrow:"GLOBAL BEST SNACKS",title:"여행지에서 만난 그 맛,<br>우리 집으로!",desc:"그리웠던 해외 인기 간식을<br>간편하게 쇼핑하세요."},
+ {img:"img/hero-3.jpg",eyebrow:"SWEET MOMENTS",title:"오늘의 간식은<br>조금 더 특별하게!",desc:"달콤하고 바삭한 세계의 간식으로<br>일상에 작은 즐거움을 더해보세요."},
+ {img:"img/hero-4.jpg",eyebrow:"YOUR SNACK JOURNEY",title:"새로운 맛을 찾는<br>가장 즐거운 방법!",desc:"스낵보야지와 함께 떠나는<br>맛있는 세계 여행."}
+];
+let slideIndex=0, slideTimer, cart=JSON.parse(localStorage.getItem("sv_cart")||"[]");
+let user=JSON.parse(localStorage.getItem("sv_user")||"null");
+const won=n=>Number(n).toLocaleString("ko-KR")+"원";
+function renderProducts(filter=""){
+ const grid=document.getElementById("productGrid");
+ const found=products.filter(p=>(p.name+" "+p.desc).toLowerCase().includes(filter.toLowerCase()));
+ grid.innerHTML=found.map(p=>`<article class="product"><div class="product-img"><img src="${p.img}" alt="${p.name}"></div><div class="product-info"><h3>${p.name}</h3><small>${p.desc}</small><div class="price-row"><span class="price">${won(p.price)}</span><button class="add" onclick="addCart(${p.id})" aria-label="${p.name} 담기">🛒</button></div><div class="rating">★ ${p.rating}</div></div></article>`).join("")||"<p>검색 결과가 없습니다.</p>";
+}
+function setSlide(i){slideIndex=(i+slides.length)%slides.length;const s=slides[slideIndex];document.getElementById("heroImage").src=s.img;document.getElementById("heroEyebrow").textContent=s.eyebrow;document.getElementById("heroTitle").innerHTML=s.title;document.getElementById("heroDesc").innerHTML=s.desc;document.querySelectorAll("#heroDots button").forEach((b,j)=>b.classList.toggle("active",j===slideIndex));}
+function moveSlide(n){setSlide(slideIndex+n);resetTimer()}
+function resetTimer(){clearInterval(slideTimer);slideTimer=setInterval(()=>setSlide(slideIndex+1),5000)}
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2300)}
+function saveCart(){localStorage.setItem("sv_cart",JSON.stringify(cart));document.getElementById("cartCount").textContent=cart.reduce((s,x)=>s+x.qty,0)}
+function addCart(id){let item=cart.find(x=>x.id===id);if(item)item.qty++;else cart.push({id,qty:1});saveCart();toast("장바구니에 상품을 담았습니다.")}
+function openModal(id){document.getElementById(id).classList.add("show")}
+function closeModal(id){document.getElementById(id).classList.remove("show")}
+function switchModal(a,b){closeModal(a);openModal(b)}
+function openCart(){renderCart();openModal("cartModal")}
+function renderCart(){
+ const el=document.getElementById("cartItems");
+ if(!cart.length)el.innerHTML='<p class="muted">장바구니가 비어 있습니다. 마음에 드는 간식을 담아보세요!</p>';
+ else el.innerHTML=cart.map(x=>{let p=products.find(y=>y.id===x.id);return `<div class="cart-line"><img src="${p.img}" alt=""><div class="grow"><b>${p.name}</b><div class="muted">${won(p.price)}</div></div><div class="qty"><button onclick="changeQty(${p.id},-1)">−</button>${x.qty}<button onclick="changeQty(${p.id},1)">+</button></div></div>`}).join("");
+ const total=cart.reduce((s,x)=>s+products.find(p=>p.id===x.id).price*x.qty,0);
+ document.getElementById("cartTotal").textContent=won(total);
+ document.getElementById("pointPreview").textContent=`예상 적립 포인트: ${Math.floor(total*rate())}P`;
+}
+function changeQty(id,d){let x=cart.find(y=>y.id===id);if(!x)return;x.qty+=d;if(x.qty<=0)cart=cart.filter(y=>y.id!==id);saveCart();renderCart()}
+function rate(){if(!user)return .01;return user.level==="골드"?.05:user.level==="실버"?.03:.01}
+function login(){
+ const email=document.getElementById("loginEmail").value.trim(),pw=document.getElementById("loginPassword").value;
+ const saved=JSON.parse(localStorage.getItem("sv_user")||"null");
+ if(!saved||saved.email!==email||saved.password!==pw){toast("이메일 또는 비밀번호를 확인해주세요.");return}
+ user=saved;updateAccount();closeModal("loginModal");toast(`${user.name}님, 환영합니다!`);
+}
+function register(){
+ const name=document.getElementById("regName").value.trim(),email=document.getElementById("regEmail").value.trim(),pw=document.getElementById("regPassword").value;
+ if(!name||!email||pw.length<4){toast("이름, 이메일, 4자 이상 비밀번호를 입력해주세요.");return}
+ if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){toast("올바른 이메일을 입력해주세요.");return}
+ if(JSON.parse(localStorage.getItem("sv_user")||"null")?.email===email){toast("이미 가입된 이메일입니다.");return}
+ user={name,email,password:pw,points:1000,spent:0,level:"일반"};localStorage.setItem("sv_user",JSON.stringify(user));updateAccount();closeModal("registerModal");toast("회원가입 완료! 1,000P가 지급되었습니다.");
+}
+function updateAccount(){const chip=document.getElementById("accountChip");if(user){chip.style.display="inline-block";chip.textContent=`${user.name} · ${user.level} · ${user.points}P`}else chip.style.display="none"}
+function checkout(){if(!cart.length){toast("장바구니가 비어 있습니다.");return}closeModal("cartModal");const total=cart.reduce((s,x)=>s+products.find(p=>p.id===x.id).price*x.qty,0);document.getElementById("checkoutTotal").textContent=won(total);document.getElementById("usePoints").value=0;document.getElementById("usePoints").max=user?user.points:0;openModal("checkoutModal")}
+function completeOrder(){
+ if(!user){toast("주문하려면 먼저 로그인 또는 회원가입을 해주세요.");closeModal("checkoutModal");openModal("loginModal");return}
+ if(!document.getElementById("shipName").value.trim()||!document.getElementById("shipPhone").value.trim()||!document.getElementById("shipAddress").value.trim()){toast("배송 정보를 모두 입력해주세요.");return}
+ const subtotal=cart.reduce((s,x)=>s+products.find(p=>p.id===x.id).price*x.qty,0);
+ const use=Math.max(0,Math.min(Number(document.getElementById("usePoints").value)||0,user.points,subtotal));
+ const earn=Math.floor((subtotal-use)*rate());
+ user.points=user.points-use+earn;user.spent+=subtotal;user.level=user.spent>=300000?"골드":user.spent>=100000?"실버":"일반";
+ localStorage.setItem("sv_user",JSON.stringify(user));cart=[];saveCart();updateAccount();closeModal("checkoutModal");
+ toast(`주문 체험 완료! ${earn}P 적립 · 현재 ${user.points}P`);
+}
+document.getElementById("searchInput").addEventListener("input",e=>{renderProducts(e.target.value);document.getElementById("best").scrollIntoView({behavior:"smooth",block:"start"})});
+document.querySelectorAll(".modal-backdrop").forEach(m=>m.addEventListener("click",e=>{if(e.target===m)m.classList.remove("show")}));
+renderProducts();saveCart();updateAccount();resetTimer();
+</script>
+</body></html>
