@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>간식여권 - 해외 수입 간식 쇼핑몰</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fffbe0;--sun:#ffd84d;--soft:#fff3a8;--ink:#3a2a12;--mute:#7d6b4d;--pt:#2b3fd6;--line:#f0e4a6;--w:#fff}
+*{box-sizing:border-box;margin:0}
+body{font-family:'Noto Sans KR',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+h1,h2,h3,.logo{font-family:'Jua','Noto Sans KR',sans-serif;font-weight:400}
+button{font:inherit;cursor:pointer;border:0;color:inherit}
+:focus-visible{outline:3px solid var(--pt);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:20;background:var(--w);border-bottom:2px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.logo{font-size:26px;color:var(--ink)}.logo b{color:var(--pt);font-weight:400}
+nav{display:flex;gap:18px;flex:1}nav a{color:var(--ink);text-decoration:none;font-weight:500}
+nav a:hover{color:var(--pt)}
+.btn{padding:9px 16px;border-radius:999px;background:var(--soft);font-weight:700}
+.btn.main{background:var(--pt);color:#fff}.btn.sun{background:var(--sun)}
+.chip{font-size:13px;background:var(--soft);padding:6px 12px;border-radius:999px;font-weight:700}
+#cartBtn{position:relative}#cartN{position:absolute;top:-6px;right:-6px;background:var(--pt);color:#fff;border-radius:99px;font-size:11px;min-width:20px;height:20px;display:grid;place-items:center}
+.hero{position:relative;height:clamp(300px,42vw,500px);overflow:hidden;background:var(--soft)}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1s}
+.slide.on{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover;object-position:right center}
+.slide .txt{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:12px;padding:0 max(20px,calc((100vw - 1120px)/2 + 20px));max-width:100%}
+.txt h1{font-size:clamp(28px,5vw,54px);line-height:1.2;max-width:480px}
+.txt p{max-width:380px;color:var(--mute)}
+.txt .btn{align-self:flex-start;padding:12px 24px}
+.dots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:8px}
+.dots button{width:10px;height:10px;border-radius:9px;background:#fff;opacity:.8;transition:.3s}
+.dots button.on{width:28px;background:var(--pt);opacity:1}
+.arr{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:#fffd;font-size:20px}
+#prev{left:12px}#next{right:12px}
+.perks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:-28px auto 0;position:relative;z-index:2}
+.perks div{background:var(--w);border-radius:16px;padding:14px 18px;border:2px solid var(--line);font-size:14px}
+.perks b{display:block;font-size:16px}
+section{padding:56px 0 8px}
+h2{font-size:30px;margin-bottom:6px}.sub{color:var(--mute);margin-bottom:20px}
+.cats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.cats button{padding:8px 16px;border-radius:99px;background:var(--w);border:2px solid var(--line);font-weight:500}
+.cats button.on{background:var(--sun);border-color:var(--sun);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.card{background:var(--w);border-radius:20px;overflow:hidden;border:2px solid var(--line);display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:1;display:block}
+.card .in{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card small{color:var(--mute)}.card h3{font-size:18px}
+.price{font-weight:700;font-size:18px}
+.pt{color:var(--pt);font-size:13px;font-weight:700}
+.card .btn{margin-top:auto;width:100%;background:var(--sun)}.card .btn:hover{background:var(--pt);color:#fff}
+.grades{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.grades div{background:var(--w);border-radius:20px;padding:20px;border:2px solid var(--line)}
+.grades h3{font-size:22px}.grades .r{font-family:Jua;font-size:34px;color:var(--pt)}
+.grades div.me{border-color:var(--pt);box-shadow:0 0 0 3px #2b3fd622}
+.grades p{font-size:14px;color:var(--mute)}
+footer{margin-top:64px;background:var(--ink);color:#e9dfc0;padding:32px 0;font-size:13px}
+.mask{position:fixed;inset:0;background:#3a2a1288;z-index:40;display:none;place-items:center;padding:16px}
+.mask.on{display:grid}
+.modal{background:var(--w);border-radius:22px;padding:26px;width:min(420px,100%);max-height:92vh;overflow:auto;display:flex;flex-direction:column;gap:10px}
+.modal label{font-size:13px;font-weight:700;display:flex;flex-direction:column;gap:4px}
+.modal input,.modal select{padding:11px 12px;border-radius:10px;border:2px solid var(--line);font:inherit;background:var(--bg)}
+.err{color:#c4281a;font-size:13px;min-height:18px}
+.pay{display:flex;gap:8px}.pay label{flex:1;flex-direction:row;align-items:center;border:2px solid var(--line);border-radius:10px;padding:8px;font-weight:500}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(400px,100%);background:var(--w);z-index:30;transform:translateX(100%);transition:transform .3s;display:flex;flex-direction:column;box-shadow:-8px 0 30px #0002}
+.drawer.on{transform:none}
+.drawer header{position:static;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+#items{flex:1;overflow:auto;padding:0 20px}
+.it{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.it img{width:56px;height:56px;border-radius:12px}.it div{flex:1;font-size:14px}
+.q{display:flex;align-items:center;gap:6px}.q button{width:26px;height:26px;border-radius:50%;background:var(--soft)}
+.sum{padding:16px 20px;border-top:2px solid var(--line);display:flex;flex-direction:column;gap:6px;font-size:14px}
+.sum .row{display:flex;justify-content:space-between;align-items:center}.sum input{width:110px;padding:6px 8px;border-radius:8px;border:2px solid var(--line);text-align:right}
+.sum .tot{font-size:18px;font-weight:700}
+#toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,80px);background:var(--ink);color:#fff;padding:12px 20px;border-radius:99px;z-index:60;transition:.3s;opacity:0}
+#toast.on{transform:translate(-50%,0);opacity:1}
+@media(max-width:760px){nav{display:none}header .wrap{gap:10px}.perks,.grades{grid-template-columns:1fr 1fr}.perks div:last-child{grid-column:1/-1}.slide img{object-position:70% center;opacity:.55}.logo{font-size:22px;flex:1}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#" style="text-decoration:none">간식<b>여권</b></a>
+<nav><a href="#shop">전체 상품</a><a href="#member">멤버십 혜택</a></nav>
+<div id="auth" style="display:flex;gap:8px;align-items:center"></div>
+<button class="btn" id="cartBtn" aria-label="장바구니 열기">장바구니<span id="cartN">0</span></button>
+</div></header>
+
+<div class="hero" id="hero">
+<div class="slide on"><img src="img/hero1.svg" alt="벨기에 초콜릿"><div class="txt"><h1>벨기에에서 온<br>진한 초콜릿</h1><p>카카오 향이 오래 남는 유럽 정통 초콜릿을 만나보세요.</p><a class="btn main" href="#shop">초콜릿 보러가기</a></div></div>
+<div class="slide"><img src="img/hero2.svg" alt="젤리"><div class="txt"><h1>쫀득함이 터지는<br>젤리 파티</h1><p>독일·영국 젤리를 한 번에. 새로운 식감을 골라보세요.</p><a class="btn main" href="#shop">젤리 보러가기</a></div></div>
+<div class="slide"><img src="img/hero3.svg" alt="스낵"><div class="txt"><h1>한 봉지로<br>떠나는 세계 일주</h1><p>미국, 스페인, 영국의 개성 있는 감자칩을 모았어요.</p><a class="btn main" href="#shop">스낵 보러가기</a></div></div>
+<div class="slide"><img src="img/hero4.svg" alt="쿠키"><div class="txt"><h1>갓 구운 듯<br>바삭한 버터 쿠키</h1><p>덴마크 틴케이스 쿠키는 선물용으로도 인기예요.</p><a class="btn main" href="#shop">쿠키 보러가기</a></div></div>
+<div class="slide"><img src="img/hero5.svg" alt="모찌"><div class="txt"><h1>말랑말랑<br>일본 모찌</h1><p>입에서 사르르 녹는 디저트로 하루를 달콤하게.</p><a class="btn main" href="#shop">디저트 보러가기</a></div></div>
+<button class="arr" id="prev" aria-label="이전">‹</button><button class="arr" id="next" aria-label="다음">›</button>
+<div class="dots" id="dots"></div>
+</div>
+
+<div class="wrap perks">
+<div><b>가입하면 3,000P</b>회원가입 즉시 적립</div>
+<div><b>5만 원 이상 무료배송</b>그 외 3,000원</div>
+<div><b>등급별 최대 5% 적립</b>구매할수록 올라가요</div>
+</div>
+
+<main class="wrap">
+<section id="shop"><h2>전체 상품</h2><p class="sub">전 세계에서 엄선해 들여온 간식입니다.</p>
+<div class="cats" id="cats"></div><div class="grid" id="grid"></div></section>
+
+<section id="member"><h2>멤버십 등급과 포인트</h2><p class="sub">누적 결제금액에 따라 등급이 오르고, 결제할 때마다 등급별 비율로 포인트가 쌓여요. 1P는 1원이며 결제 시 바로 쓸 수 있어요.</p>
+<div class="grades" id="grades"></div></section>
+</main>
+
+<footer><div class="wrap">간식여권 · 해외 수입 간식 전문몰<br>이 페이지의 결제는 시연용입니다. 실제 운영 시 PG사(토스페이먼츠, 포트원 등) 연동과 서버 회원 DB가 필요합니다.</div></footer>
+
+<aside class="drawer" id="drawer" aria-label="장바구니">
+<header><h3>장바구니</h3><button class="btn" id="closeCart">닫기</button></header>
+<div id="items"></div>
+<div class="sum" id="sum"></div>
+</aside>
+
+<div class="mask" id="mask"><div class="modal" id="modal" role="dialog" aria-modal="true"></div></div>
+<div id="toast" role="status"></div>
+
+<script>
+const $=s=>document.querySelector(s),won=n=>n.toLocaleString('ko-KR')+'원';
+const mem={},st={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return k in mem?mem[k]:d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){mem[k]=v}}};
+const G=[{n:'새싹',min:0,r:1},{n:'쿠키',min:100000,r:2},{n:'초콜릿',min:300000,r:3},{n:'골드',min:700000,r:5}];
+const P=[
+['벨기에 밀크 초콜릿 바','벨기에','초콜릿',4500],['베어 젤리 믹스','독일','젤리',3900],['바다소금 감자칩','미국','스낵',3200],['버터 쿠키 틴','덴마크','쿠키',12800],
+['초코 막대과자','일본','쿠키',2500],['딸기 모찌 세트','일본','디저트',5900],['파프리카 감자칩','스페인','스낵',3500],['과일 구미 소다','영국','젤리',4200]];
+let users=st.get('u',{}),me=st.get('me',null),cart=st.get('c',{}),cat='전체';
+const gr=u=>[...G].reverse().find(g=>u.spent>=g.min),rate=()=>me?gr(users[me]).r:1;
+const save=()=>{st.set('u',users);st.set('me',me);st.set('c',cart)};
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),2400)}
+
+/* hero */
+const sl=[...document.querySelectorAll('.slide')];let cur=0,timer;
+sl.forEach((_,i)=>{const b=document.createElement('button');b.setAttribute('aria-label',`${i+1}번 슬라이드`);b.onclick=()=>go(i);$('#dots').append(b)});
+function go(i){cur=(i+sl.length)%sl.length;sl.forEach((s,j)=>s.classList.toggle('on',j==cur));[...$('#dots').children].forEach((d,j)=>d.classList.toggle('on',j==cur));clearInterval(timer);timer=setInterval(()=>go(cur+1),4500)}
+$('#prev').onclick=()=>go(cur-1);$('#next').onclick=()=>go(cur+1);go(0);
+
+/* products */
+function shop(){
+ const cs=['전체',...new Set(P.map(p=>p[2]))];
+ $('#cats').innerHTML=cs.map(c=>`<button class="${c==cat?'on':''}" data-c="${c}">${c}</button>`).join('');
+ $('#grid').innerHTML=P.map((p,i)=>({p,i})).filter(x=>cat=='전체'||x.p[2]==cat).map(({p,i})=>`<article class="card"><img src="img/p${i+1}.svg" alt="${p[0]}"><div class="in"><small>${p[1]} · ${p[2]}</small><h3>${p[0]}</h3><span class="price">${won(p[3])}</span><span class="pt">${rate()}% 적립 · ${Math.floor(p[3]*rate()/100)}P</span><button class="btn" data-a="${i}" style="margin-top:10px">담기</button></div></article>`).join('')}
+$('#cats').onclick=e=>{if(e.target.dataset.c){cat=e.target.dataset.c;shop()}};
+$('#grid').onclick=e=>{const i=e.target.dataset.a;if(i!=null){cart[i]=(cart[i]||0)+1;save();draw();toast(P[i][0]+' 담았어요')}};
+
+/* grades */
+function grades(){const mg=me?gr(users[me]).n:'';
+ $('#grades').innerHTML=G.map((g,i)=>`<div class="${g.n==mg?'me':''}"><h3>${g.n}</h3><div class="r">${g.r}%</div><p>${g.min?`누적 ${won(g.min)} 이상`:'가입 즉시'}${g.n==mg?'<br><b style="color:var(--pt)">내 등급</b>':''}</p></div>`).join('')}
+
+/* auth ui */
+function auth(){
+ $('#auth').innerHTML=me?`<span class="chip">${users[me].name}님 · ${gr(users[me]).n} · ${users[me].points.toLocaleString()}P</span><button class="btn" id="out">로그아웃</button>`:`<button class="btn" id="li">로그인</button><button class="btn main" id="su">회원가입</button>`;
+ if(me)$('#out').onclick=()=>{me=null;save();refresh();toast('로그아웃했어요')};else{$('#li').onclick=()=>modal('login');$('#su').onclick=()=>modal('signup')}}
+function refresh(){auth();shop();grades();draw()}
+
+/* modal */
+function modal(t,extra){
+ const m=$('#modal');
+ if(t=='signup')m.innerHTML=`<h3>회원가입</h3><p class="sub" style="margin:0">가입하면 3,000P를 바로 드려요.</p><label>이름<input id="f1" autocomplete="name"></label><label>이메일<input id="f2" type="email" autocomplete="email"></label><label>비밀번호 (6자 이상)<input id="f3" type="password" autocomplete="new-password"></label><div class="err" id="err"></div><button class="btn main" id="ok">가입하고 3,000P 받기</button><button class="btn" id="x">닫기</button>`;
+ if(t=='login')m.innerHTML=`<h3>로그인</h3><label>이메일<input id="f2" type="email" autocomplete="email"></label><label>비밀번호<input id="f3" type="password" autocomplete="current-password"></label><div class="err" id="err"></div><button class="btn main" id="ok">로그인</button><button class="btn" id="x">닫기</button>`;
+ if(t=='pay'){const o=extra;m.innerHTML=`<h3>결제하기</h3><label>받는 분<input id="f1" value="${users[me].name}"></label><label>연락처<input id="f2" inputmode="tel" placeholder="010-0000-0000"></label><label>배송 주소<input id="f3" placeholder="도로명 주소"></label><b style="font-size:13px">결제 수단</b><div class="pay"><label><input type="radio" name="pm" checked>카드</label><label><input type="radio" name="pm">계좌이체</label><label><input type="radio" name="pm">간편결제</label></div><div class="err" id="err"></div><button class="btn main" id="ok">${won(o.total)} 결제</button><button class="btn" id="x">취소</button><small style="color:var(--mute)">시연용 결제입니다. 실제 청구는 없어요.</small>`}
+ if(t=='done')m.innerHTML=`<h3>결제가 완료됐어요</h3><p>${extra}</p><button class="btn main" id="x">계속 쇼핑하기</button>`;
+ $('#mask').classList.add('on');$('#x').onclick=close;const f=m.querySelector('input');f&&f.focus();
+ if($('#ok'))$('#ok').onclick=()=>({signup,login,pay}[t])(extra)}
+const close=()=>$('#mask').classList.remove('on');
+$('#mask').onclick=e=>{if(e.target.id=='mask')close()};
+addEventListener('keydown',e=>{if(e.key=='Escape'){close();$('#drawer').classList.remove('on')}});
+const err=t=>$('#err').textContent=t;
+function signup(){const n=$('#f1').value.trim(),e=$('#f2').value.trim().toLowerCase(),p=$('#f3').value;
+ if(!n)return err('이름을 입력해주세요.');if(!/^\S+@\S+\.\S+$/.test(e))return err('이메일 형식을 확인해주세요.');if(p.length<6)return err('비밀번호는 6자 이상이어야 해요.');if(users[e])return err('이미 가입된 이메일이에요. 로그인해주세요.');
+ users[e]={name:n,pw:btoa(unescape(encodeURIComponent(p))),points:3000,spent:0};me=e;save();close();refresh();toast('가입 완료! 3,000P가 적립됐어요')}
+function login(){const e=$('#f2').value.trim().toLowerCase(),p=btoa(unescape(encodeURIComponent($('#f3').value)));
+ if(!users[e]||users[e].pw!=p)return err('이메일 또는 비밀번호가 맞지 않아요.');me=e;save();close();refresh();toast(users[e].name+'님, 환영해요')}
+
+/* cart */
+let use=0;
+const calc=()=>{const sub=Object.entries(cart).reduce((s,[i,q])=>s+P[i][3]*q,0),ship=sub&&sub<50000?3000:0,max=me?Math.min(users[me].points,sub):0;use=Math.max(0,Math.min(use,max));const total=sub+ship-use;return{sub,ship,max,total,earn:Math.floor(total*rate()/100)}};
+function draw(){const ks=Object.keys(cart);$('#cartN').textContent=ks.reduce((s,k)=>s+cart[k],0);
+ $('#items').innerHTML=ks.length?ks.map(i=>`<div class="it"><img src="img/p${+i+1}.svg" alt=""><div><b>${P[i][0]}</b><br>${won(P[i][3])}</div><div class="q" style="flex:none"><button data-m="${i}" aria-label="하나 빼기">−</button>${cart[i]}<button data-p="${i}" aria-label="하나 더하기">+</button></div></div>`).join(''):'<p style="padding:40px 0;text-align:center;color:var(--mute)">장바구니가 비었어요.<br>마음에 드는 간식을 담아보세요.</p>';
+ const c=calc();$('#sum').innerHTML=ks.length?`<div class="row"><span>상품 금액</span><span>${won(c.sub)}</span></div><div class="row"><span>배송비</span><span>${c.ship?won(c.ship):'무료'}</span></div><div class="row"><span>포인트 사용 ${me?`(보유 ${users[me].points.toLocaleString()}P)`:''}</span><span><input id="use" type="number" min="0" max="${c.max}" step="100" value="${use}" ${me?'':'disabled'} aria-label="사용할 포인트"></span></div><div class="row tot"><span>결제 금액</span><span>${won(c.total)}</span></div><div class="pt">결제 후 ${c.earn.toLocaleString()}P 적립 (${rate()}%)</div><button class="btn main" id="go" style="padding:13px">${me?'결제하기':'로그인하고 결제하기'}</button>`:'';
+ if(ks.length){$('#use').oninput=e=>{use=+e.target.value||0;const p=e.target.selectionStart;draw();const n=$('#use');n.focus()};$('#go').onclick=checkout}}
+$('#items').onclick=e=>{const d=e.target.dataset;if(d.p)cart[d.p]++;if(d.m&&--cart[d.m]<=0)delete cart[d.m];save();draw()};
+$('#cartBtn').onclick=()=>$('#drawer').classList.add('on');$('#closeCart').onclick=()=>$('#drawer').classList.remove('on');
+function checkout(){if(!me){$('#drawer').classList.remove('on');return modal('login')}modal('pay',calc())}
+function pay(){if(!$('#f2').value.trim()||!$('#f3').value.trim())return err('연락처와 주소를 입력해주세요.');
+ const c=calc(),u=users[me],old=gr(u).n;u.points=u.points-use+c.earn;u.spent+=c.total;cart={};use=0;save();
+ const nw=gr(u).n,up=nw!=old?` 축하해요! ${nw} 등급으로 올랐어요.`:'';
+ refresh();modal('done',`${won(c.total)} 결제 · ${c.earn.toLocaleString()}P 적립됐어요.${up}<br>현재 보유 포인트는 ${u.points.toLocaleString()}P예요.`);$('#drawer').classList.remove('on')}
+refresh();
+</script>
+</body>
+</html>
